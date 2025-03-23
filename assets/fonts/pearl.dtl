@@ -1,0 +1,9 @@
+[style name="tolnotes"]
+if {tolnotes} == 0:
+	The UAE is home to over 200 nationalities, living and working together in peace.
+	set {tolnotes} += 1
+	[end_timeline]
+elif {tolnotes} == 1:
+	In Emirati tradition, welcoming guests with open arms is a way of demonstrating respect and generosity.
+	set {tolnotes} += 1
+	[end_timeline]

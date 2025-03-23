@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2w2i5h0lhc6l"]
+
+[ext_resource type="Script" path="res://scripts/scorpion.gd" id="1_fxbww"]
+[ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="2_aiwyj"]
+[ext_resource type="Texture2D" uid="uid://b5ql7vkajdtk2" path="res://assets/sprites/scorpion.png" id="2_n6pvg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("2_n6pvg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8uf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4xjq"]
+size = Vector2(10, 14)
+
+[node name="Scorpion" type="Node2D"]
+script = ExtResource("1_fxbww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -9)
+rotation = -0.430422
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_a8uf2")
+autoplay = "default"
+frame_progress = 0.895103
+
+[node name="Killzone" parent="." instance=ExtResource("2_aiwyj")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_u4xjq")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(9, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(-9, 0)

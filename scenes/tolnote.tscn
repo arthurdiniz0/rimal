@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsyen3g0p575s"]
+
+[ext_resource type="Script" path="res://scripts/tolnote.gd" id="1_ebfbo"]
+[ext_resource type="Texture2D" uid="uid://c6raibby2sxui" path="res://assets/ui_n_backgrounds/GUI.png" id="1_fq111"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_4ky5g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dshon"]
+size = Vector2(1171, 672)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upjjy"]
+texture = ExtResource("1_fq111")
+region_rect = Rect2(49, 97, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ralml"]
+texture = ExtResource("1_fq111")
+region_rect = Rect2(145, 81, 46, 14)
+
+[node name="Tolnote" type="CanvasLayer"]
+script = ExtResource("1_ebfbo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(575.5, 326)
+shape = SubResource("RectangleShape2D_dshon")
+
+[node name="TolNotesPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -82.0
+offset_right = 163.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_upjjy")
+
+[node name="TolNotes" type="Panel" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -83.0
+offset_right = 309.0
+offset_bottom = -27.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ralml")
+
+[node name="Label" type="Label" parent="TolNotesPanel/TolNotes"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 15.0
+offset_right = 265.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("2_4ky5g")
+text = "Note of Tolerance"
+
+[node name="NoteText" type="Label" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 22.0
+offset_right = 300.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4ky5g")
+text = "Note goes here"

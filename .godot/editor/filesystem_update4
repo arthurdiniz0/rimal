@@ -1,0 +1,14 @@
+res://scenes/level1.tscn
+res://assets/fonts/tolnotes.tres
+res://dialogues/VisualNovelTextbox/stylebasic.tres
+res://scripts/game_manager.gd
+res://assets/ui_n_backgrounds/gui.tres
+res://scenes/date.tscn
+res://scenes/pearl.tscn
+res://scenes/player.tscn
+res://scenes/lvlmenu.tscn
+res://scenes/nxt_lvl.tscn
+res://scenes/level2.tscn
+res://scenes/scorpion.tscn
+res://scenes/main_menu.tscn
+res://scenes/tolnote.tscn

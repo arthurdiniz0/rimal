@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdf0i20n3y8v7"]
+
+[ext_resource type="Script" path="res://scripts/nxt_lvl.gd" id="1_8fqj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86qqn"]
+
+[node name="NxtLvl" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_8fqj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_86qqn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
