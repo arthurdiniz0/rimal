@@ -4,31 +4,44 @@ extends Node
 @onready var score_final = $ScoreFinal
 @onready var animation_player: AnimationPlayer = $"../TransitionLayer/AnimationPlayer"
 @onready var tolnote: CanvasLayer = $"../Tolnote"
+@onready var player: CharacterBody2D = $"../Player"
+@onready var pearls: Node = $"../Pearls"
 
+var style: DialogicStyle = load("res://dialogues/VisualNovelTextbox/stylebasic.tres")
 var score = Global.score 
 
+
 func _ready():
+	# Pre-load Dialogic timelines (fix lag)
+	style.prepare()
+	Dialogic.preload_timeline("res://dialogues/date.dtl")
+	
+	# Update score in UI
 	scoreui.text = str(Global.score)
-	print("camel: " + str(Global.camel))
+	
+	# Delete already collected pearls
+	for i in range(2*Global.lvl - 1, Global.tolnote):
+		print("i " + str(i))
+		pearls.get_node("Pearl" + str(i)).free()
 
-func _process(float) -> void:
-	if tolnote.visible:
-		tolnote.visible = false
 
-func add_point():
-	if Global.firstDate:
-		Dialogic.start("date")
+func add_point(): # This is called by date.gd when a date is collected
+	if Global.firstDate: # If it is the first date
+		player.set_physics_process(false) # Freeze player
+		Dialogic.start("date") # Show message about dates in the UAE
 		Global.firstDate = false
-	score += 1
+	score += 1 # Add point
 	score_final.text = "You collected " + str(score) + " dates."
-	scoreui.text = str(score)
+	scoreui.text = str(score) # Update score in the GUI
 
-func tolerance_note():
-	##Dialogic.start("pearl")
-	tolnote.visible = true
-	print("rodou")
+func tolerance_note(): # This is called by pearl.gd when a pearl is collected
+	tolnote.visible = true # Make tolerance note visible
+	player.set_physics_process(false) # Freeze player
+	# The rest of the process (close the note) will happen at tolnote.gd 
+	
 
-func nxt_lvl():
+
+func nxt_lvl(): # This is called by nxt_lvl.gd, when the player collides with the object
 	animation_player.play("fade_out")
 	await get_tree().create_timer(1).timeout
 	Global.score = score

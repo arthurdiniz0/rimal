@@ -1,13 +1,13 @@
+Node
+Button
+Label
+ColorRect
 CollisionShape2D
 Area2D
 CanvasLayer
 Node2D
-Label
 AnimationPlayer
-ColorRect
-Button
 Control
-Node
 Panel
 TextureRect
 MenuBar

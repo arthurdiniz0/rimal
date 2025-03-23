@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4shii817shj1"]
+[gd_scene load_steps=18 format=3 uid="uid://4shii817shj1"]
 
 [ext_resource type="Script" path="res://scripts/lvlmenu.gd" id="1_kan73"]
 [ext_resource type="Theme" uid="uid://dqmu52ht0y2m8" path="res://assets/ui_n_backgrounds/gui.tres" id="2_36gwk"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bp8vi6q8psrmc" path="res://assets/sprites/camel.png" id="5_3k8ea"]
 [ext_resource type="Texture2D" uid="uid://ckilvpgj4v42p" path="res://assets/sprites/date.png" id="6_g2y64"]
 [ext_resource type="Texture2D" uid="uid://d336ivumlkn81" path="res://assets/ui_n_backgrounds/desert.jpeg" id="7_0q43t"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_fs8es"]
+[ext_resource type="Texture2D" uid="uid://bksqj8qruu3mg" path="res://assets/sprites/pearl_frozen.png" id="8_y3drq"]
+[ext_resource type="PackedScene" uid="uid://dsyen3g0p575s" path="res://scenes/tolnote.tscn" id="10_wjlnw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm0kd"]
 texture = ExtResource("3_5wh6u")
@@ -176,6 +179,86 @@ offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("4_v33kj")
 text = "Notes of Tolerance"
 
+[node name="TolNotesNum" type="Label" parent="TolNotesPanel/TolNotes"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 113.0
+offset_right = 259.0
+offset_bottom = 136.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_fs8es")
+text = "x / 6 Collected"
+
+[node name="Pearl1" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 78.0
+offset_right = 114.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl2" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 78.0
+offset_right = 194.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl3" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 78.0
+offset_right = 274.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl4" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 150.0
+offset_right = 274.0
+offset_bottom = 204.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl5" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 150.0
+offset_right = 194.0
+offset_bottom = 204.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl6" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 150.0
+offset_right = 114.0
+offset_bottom = 204.0
+disabled = true
+icon = ExtResource("8_y3drq")
+icon_alignment = 1
+expand_icon = true
+
 [node name="NextLevel" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -260,5 +343,14 @@ texture = ExtResource("6_g2y64")
 expand_mode = 1
 stretch_mode = 1
 
+[node name="Tolnote" parent="." instance=ExtResource("10_wjlnw")]
+visible = false
+
 [connection signal="pressed" from="UpgradesPanel/Camel" to="." method="_on_camel_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl1" to="." method="_on_pearl_1_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl2" to="." method="_on_pearl_2_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl3" to="." method="_on_pearl_3_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl4" to="." method="_on_pearl_4_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl5" to="." method="_on_pearl_5_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl6" to="." method="_on_pearl_6_pressed"]
 [connection signal="pressed" from="NextLevel" to="." method="_on_button_pressed"]

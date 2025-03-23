@@ -12,3 +12,10 @@ res://scenes/level2.tscn
 res://scenes/scorpion.tscn
 res://scenes/main_menu.tscn
 res://scenes/tolnote.tscn
+res://scripts/tolnote.gd
+res://scripts/Global.gd
+res://assets/fonts/pearl.dtl
+res://scripts/main_menu.gd
+res://scripts/lvlmenu.gd
+res://scripts/pearl.gd
+res://scripts/killzone.gd

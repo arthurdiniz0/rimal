@@ -457,12 +457,6 @@ texture = ExtResource("11_oxkt4")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Pearl" parent="." instance=ExtResource("12_at68w")]
-position = Vector2(329, 38)
-
-[node name="Pearl2" parent="." instance=ExtResource("12_at68w")]
-position = Vector2(632, -107)
-
 [node name="NxtLvl" parent="." instance=ExtResource("13_6182k")]
 position = Vector2(519, -110)
 
@@ -489,3 +483,11 @@ libraries = {
 
 [node name="Tolnote" parent="." instance=ExtResource("14_j3tno")]
 visible = false
+
+[node name="Pearls" type="Node" parent="."]
+
+[node name="Pearl1" parent="Pearls" instance=ExtResource("12_at68w")]
+position = Vector2(329, 38)
+
+[node name="Pearl2" parent="Pearls" instance=ExtResource("12_at68w")]
+position = Vector2(632, -107)

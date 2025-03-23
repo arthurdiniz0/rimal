@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsyen3g0p575s"]
+[gd_scene load_steps=8 format=3 uid="uid://dsyen3g0p575s"]
 
 [ext_resource type="Script" path="res://scripts/tolnote.gd" id="1_ebfbo"]
 [ext_resource type="Texture2D" uid="uid://c6raibby2sxui" path="res://assets/ui_n_backgrounds/GUI.png" id="1_fq111"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="2_4ky5g"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_5nem7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dshon"]
 size = Vector2(1171, 672)
@@ -62,5 +63,19 @@ offset_top = 22.0
 offset_right = 300.0
 offset_bottom = 234.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4ky5g")
+theme_override_fonts/font = ExtResource("4_5nem7")
 text = "Note goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.741176)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
