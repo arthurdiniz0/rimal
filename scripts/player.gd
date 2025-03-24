@@ -1,22 +1,33 @@
 extends CharacterBody2D
 
-
+var inUse = true
 var SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-func _process(delta: float) -> void:
-	if Global.camel:
-		SPEED = 500
-
+func _ready() -> void:
+	add_to_group("player")
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+	# Disable player collision if using camel
+	#collision_shape_2d.disabled = not inUse
+	if not inUse:
+		var direction = Input.get_axis("move_left", "move_right")
+		animated_sprite_2d.play("idle")
+		if direction > 0:
+			animated_sprite_2d.flip_h = false
+		elif direction < 0:
+			animated_sprite_2d.flip_h = true
+		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -27,18 +38,18 @@ func _physics_process(delta):
 	
 	# Flip the Sprite
 	if direction > 0:
-		animated_sprite.flip_h = false
+		animated_sprite_2d.flip_h = false
 	elif direction < 0:
-		animated_sprite.flip_h = true
+		animated_sprite_2d.flip_h = true
 	
 	# Play animations
 	if is_on_floor():
 		if direction == 0:
-			animated_sprite.play("idle")
+			animated_sprite_2d.play("idle")
 		else:
-			animated_sprite.play("run")
+			animated_sprite_2d.play("run")
 	else:
-		animated_sprite.play("jump")
+		animated_sprite_2d.play("jump")
 	
 	# Apply movement
 	if direction:

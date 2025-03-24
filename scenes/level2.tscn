@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c45yngl6fbkql"]
+[gd_scene load_steps=23 format=4 uid="uid://c45yngl6fbkql"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_gtj8v"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3qmmh"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4jgs6p7wi3m" path="res://scenes/pearl.tscn" id="12_vjnrt"]
 [ext_resource type="PackedScene" uid="uid://cdf0i20n3y8v7" path="res://scenes/nxt_lvl.tscn" id="13_58hi6"]
 [ext_resource type="PackedScene" uid="uid://dsyen3g0p575s" path="res://scenes/tolnote.tscn" id="14_7ui4i"]
+[ext_resource type="PackedScene" uid="uid://b74yheh4wfo0t" path="res://scenes/camel.tscn" id="15_26xgr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
 content_margin_right = 11.0
@@ -434,7 +435,10 @@ visible = false
 [node name="Pearls" type="Node" parent="."]
 
 [node name="Pearl3" parent="Pearls" instance=ExtResource("12_vjnrt")]
-position = Vector2(76, -46)
+position = Vector2(326, 36)
 
 [node name="Pearl4" parent="Pearls" instance=ExtResource("12_vjnrt")]
-position = Vector2(51, -46)
+position = Vector2(278, 5)
+
+[node name="camel" parent="." instance=ExtResource("15_26xgr")]
+position = Vector2(61, -49)
