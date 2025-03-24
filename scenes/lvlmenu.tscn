@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://dqmu52ht0y2m8" path="res://assets/ui_n_backgrounds/gui.tres" id="2_36gwk"]
 [ext_resource type="Texture2D" uid="uid://c6raibby2sxui" path="res://assets/ui_n_backgrounds/GUI.png" id="3_5wh6u"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_v33kj"]
-[ext_resource type="Texture2D" uid="uid://bp8vi6q8psrmc" path="res://assets/sprites/camel.png" id="5_3k8ea"]
+[ext_resource type="Texture2D" uid="uid://d1ihmog37puhg" path="res://assets/sprites/camel_icon.png" id="5_b5fux"]
 [ext_resource type="Texture2D" uid="uid://ckilvpgj4v42p" path="res://assets/sprites/date.png" id="6_g2y64"]
 [ext_resource type="Texture2D" uid="uid://d336ivumlkn81" path="res://assets/ui_n_backgrounds/desert.jpeg" id="7_0q43t"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_fs8es"]
@@ -92,7 +92,7 @@ offset_bottom = 173.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_xom3c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5vuxx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wyrsi")
-icon = ExtResource("5_3k8ea")
+icon = ExtResource("5_b5fux")
 expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="UpgradesPanel/Camel"]
