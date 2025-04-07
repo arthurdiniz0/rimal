@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ckilvpgj4v42p" path="res://assets/sprites/date.png" id="6_g2y64"]
 [ext_resource type="Texture2D" uid="uid://d336ivumlkn81" path="res://assets/ui_n_backgrounds/desert.jpeg" id="7_0q43t"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_fs8es"]
+[ext_resource type="Texture2D" uid="uid://bhsfnbv7pokjw" path="res://assets/sprites/falcon_icon.png" id="7_gqepq"]
 [ext_resource type="Texture2D" uid="uid://bksqj8qruu3mg" path="res://assets/sprites/pearl_frozen.png" id="8_y3drq"]
 [ext_resource type="PackedScene" uid="uid://dsyen3g0p575s" path="res://scenes/tolnote.tscn" id="10_wjlnw"]
 
@@ -28,8 +29,6 @@ modulate_color = Color(0.917647, 0.831373, 0.666667, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyrsi"]
 texture = ExtResource("3_5wh6u")
 region_rect = Rect2(49, 97, 30, 30)
-
-[sub_resource type="ImageTexture" id="ImageTexture_0k171"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epl2p"]
 texture = ExtResource("3_5wh6u")
@@ -124,7 +123,7 @@ offset_bottom = 173.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_xom3c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5vuxx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_wyrsi")
-icon = SubResource("ImageTexture_0k171")
+icon = ExtResource("7_gqepq")
 expand_icon = true
 
 [node name="TextureRect2" type="TextureRect" parent="UpgradesPanel/Falcon"]
