@@ -12,6 +12,7 @@ res://scenes/level2.tscn
 res://scenes/scorpion.tscn
 res://scenes/main_menu.tscn
 res://scenes/tolnote.tscn
-res://scripts/player.gd
-res://scripts/camel.gd
 res://scenes/camel.tscn
+res://scripts/camel.gd
+res://dialogues/not_enough_pearls.dtl
+res://scripts/nxt_lvl.gd

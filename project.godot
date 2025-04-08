@@ -27,7 +27,8 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"date": "res://dialogues/date.dtl"
+"date": "res://dialogues/date.dtl",
+"not_enough_pearls": "res://dialogues/not_enough_pearls.dtl"
 }
 layout/style_list=["res://assets/fonts/tolnotes.tres", "res://dialogues/VisualNovelTextbox/stylebasic.tres"]
 layout/default_style=""

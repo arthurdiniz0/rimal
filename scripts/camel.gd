@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:	
 	if body.is_in_group("player"):
 		body.inUse = false
 		body.animated_sprite_2d.flip_h = animated_sprite_2d.flip_h
@@ -59,3 +59,7 @@ func do_ride(rider):
 	inUse = true
 	area_2d.set_collision_mask_value(1, true)
 	area_2d.set_collision_mask_value(2, false)
+	
+	# Turn position smoothing back on
+	await get_tree().create_timer(0.1).timeout
+	rider.get_node("Camera2D").position_smoothing_enabled = true

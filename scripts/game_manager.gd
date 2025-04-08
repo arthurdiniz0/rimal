@@ -6,6 +6,7 @@ extends Node
 @onready var tolnote: CanvasLayer = $"../Tolnote"
 @onready var player: CharacterBody2D = $"../Player"
 @onready var pearls: Node = $"../Pearls"
+@onready var camel: CharacterBody2D = $"../camel"
 
 var style: DialogicStyle = load("res://dialogues/VisualNovelTextbox/stylebasic.tres")
 var score = Global.score 
@@ -23,6 +24,12 @@ func _ready():
 	for i in range(2*Global.lvl - 1, Global.tolnote):
 		print("i " + str(i))
 		pearls.get_node("Pearl" + str(i)).free()
+		
+	if Global.lvl == 2:
+		if not Global.camel: # If the player didn't buy a camel
+			camel.free()
+		else:
+			player.get_node("Camera2D").position_smoothing_enabled = false
 
 
 func add_point(): # This is called by date.gd when a date is collected

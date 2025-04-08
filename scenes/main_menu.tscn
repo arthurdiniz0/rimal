@@ -148,7 +148,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("5_roy2c")
 theme_override_font_sizes/font_size = 26
-text = "by Arthur Diniz and Ery Castro"
+text = "by Maryam Alabbar, Arthur Diniz and Ery Castro"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="TransitionLayer/Start" to="." method="_on_start_pressed"]
