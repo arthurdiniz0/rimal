@@ -477,6 +477,6 @@ libraries = {
 autoplay = "move_up"
 
 [node name="camel" parent="." instance=ExtResource("15_26xgr")]
-position = Vector2(243, -3)
+position = Vector2(241, 1)
 
 [connection signal="body_entered" from="GameManager/checkpearl" to="GameManager/checkpearl" method="_on_body_entered"]
