@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cuv4vme4rwno0"]
+[gd_scene load_steps=35 format=4 uid="uid://cuv4vme4rwno0"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_k0d84"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_t36hd"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bx4jgs6p7wi3m" path="res://scenes/pearl.tscn" id="12_at68w"]
 [ext_resource type="PackedScene" uid="uid://cdf0i20n3y8v7" path="res://scenes/nxt_lvl.tscn" id="13_6182k"]
 [ext_resource type="PackedScene" uid="uid://dsyen3g0p575s" path="res://scenes/tolnote.tscn" id="14_j3tno"]
+[ext_resource type="PackedScene" uid="uid://bta3pqjc528hr" path="res://scenes/falcon.tscn" id="16_k503a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtaks"]
 content_margin_right = 11.0
@@ -249,6 +250,44 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_vamxb"),
 "move_up": SubResource("Animation_jbkak")
+}
+
+[sub_resource type="Animation" id="Animation_quux5"]
+resource_name = "move_up"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(311, -242), Vector2(311, -368)]
+}
+
+[sub_resource type="Animation" id="Animation_5acpf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(311, -242)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_prs0n"]
+_data = {
+"RESET": SubResource("Animation_5acpf"),
+"move_up": SubResource("Animation_quux5")
 }
 
 [node name="Game" type="Node2D"]
@@ -572,5 +611,18 @@ libraries = {
 "": SubResource("AnimationLibrary_ehoio")
 }
 autoplay = "move_up"
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("9_rsj4m")]
+position = Vector2(311, -242)
+scale = Vector2(1.3, 1.2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform3"]
+libraries = {
+"": SubResource("AnimationLibrary_prs0n")
+}
+autoplay = "move_up"
+
+[node name="falcon" parent="Platforms" instance=ExtResource("16_k503a")]
+position = Vector2(203, 51)
 
 [connection signal="body_entered" from="GameManager/checkpearl" to="GameManager/checkpearl" method="_on_body_entered"]
