@@ -39,14 +39,14 @@ func _on_button_pressed() -> void: # Next level button
 
 
 func _on_camel_pressed() -> void: # Buy camel
-	if Global.score >= 10: # If there is enough dates
-		Global.score -= 10
+	if Global.score >= 15: # If there is enough dates
+		Global.score -= 15
 		Global.camel = true
 		for children in camel.get_children(): # Disable button
 			children.visible = false
 		camel.disabled = true 
 	else: # If there isn't enough dates
-		print("vai trabalha o fudido kkkk")
+		print("Not enough dates")
 		
 		
 		

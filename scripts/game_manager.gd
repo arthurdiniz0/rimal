@@ -26,8 +26,10 @@ func _ready():
 		pearls.get_node("Pearl" + str(i)).free()
 		
 	if Global.lvl == 2:
-		if not Global.camel: # If the player didn't buy a camel
-			camel.free()
+		if not Global.camel: # If the player didn't buy a camel 
+			print("freecamel")
+			camel.process_mode = 4 # disable
+			camel.visible = false
 		else:
 			player.get_node("Camera2D").position_smoothing_enabled = false
 

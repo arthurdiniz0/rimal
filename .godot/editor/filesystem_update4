@@ -13,4 +13,10 @@ res://scenes/scorpion.tscn
 res://scenes/main_menu.tscn
 res://scenes/tolnote.tscn
 res://scenes/camel.tscn
-res://scenes/platform.tscn
+res://dialogues/date.dtl
+res://scenes/checkpearl.gd
+res://dialogues/checkpearl.dtl
+res://dialogues/not_enough_pearls.dtl
+res://scripts/lvlmenu.gd
+res://scripts/scorpion.gd
+res://scripts/tolnote.gd

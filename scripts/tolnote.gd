@@ -14,6 +14,10 @@ func _process(delta: float) -> void: # Update text of the note
 		note_text.text = "The UAE is home to over 200 nationalities, living and working together in peace."
 	elif Global.tolnote == 2:
 		note_text.text = "In Emirati tradition, welcoming guests with open arms is a way of demonstrating respect and generosity."
+	elif Global.tolnote == 3:
+		note_text.text = "Tolerance Clubs in universities encourage youth to lead initiatives that promote coexistence."
+	elif Global.tolnote == 4:
+		note_text.text = "Sharing water or gahwa (Arabic coffee) with travelers is an age-old sign of generosity and good will in Emirati culture."
 	
 	# "Closing" tolerance note: make it invisible when pressing key
 	if Input.is_action_just_pressed("dialogic_default_action"):
