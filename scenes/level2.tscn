@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_3qmmh"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="3_4fd1n"]
 [ext_resource type="Texture2D" uid="uid://ckilvpgj4v42p" path="res://assets/sprites/date.png" id="4_yyb46"]
-[ext_resource type="Texture2D" uid="uid://d0q2g65ahgok" path="res://assets/sprites/world_tileset.png" id="5_ph17r"]
+[ext_resource type="Texture2D" uid="uid://boobrygx0crfl" path="res://assets/sprites/world_tileset.png" id="5_ph17r"]
 [ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="6_ut4ac"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="7_humir"]
 [ext_resource type="PackedScene" uid="uid://pqp5qaw561fr" path="res://scenes/date.tscn" id="8_6c7yb"]

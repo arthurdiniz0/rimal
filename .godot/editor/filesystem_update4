@@ -13,6 +13,4 @@ res://scenes/scorpion.tscn
 res://scenes/main_menu.tscn
 res://scenes/tolnote.tscn
 res://scenes/camel.tscn
-res://scripts/camel.gd
-res://dialogues/not_enough_pearls.dtl
-res://scripts/nxt_lvl.gd
+res://scenes/platform.tscn
