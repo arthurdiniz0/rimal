@@ -519,7 +519,7 @@ position = Vector2(499, 50)
 position = Vector2(475, -270)
 
 [node name="NxtLvl" parent="." instance=ExtResource("13_6182k")]
-position = Vector2(431, -613)
+position = Vector2(433, -612)
 
 [node name="Dates" type="Node" parent="."]
 
