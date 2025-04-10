@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c626v7qmchuib"]
+
+[ext_resource type="Script" path="res://scripts/level_3.gd" id="1_2f0qp"]
+[ext_resource type="PackedScene" uid="uid://bel0k2geiysvd" path="res://scenes/pipe.tscn" id="2_28se8"]
+[ext_resource type="Texture2D" uid="uid://d336ivumlkn81" path="res://assets/ui_n_backgrounds/desert.jpeg" id="3_ven5y"]
+[ext_resource type="PackedScene" uid="uid://bta3pqjc528hr" path="res://scenes/falcon.tscn" id="4_chbq0"]
+[ext_resource type="PackedScene" uid="uid://dxogo0g2vg62b" path="res://scenes/ground.tscn" id="5_etrba"]
+
+[node name="level3" type="Node2D"]
+position = Vector2(0, 48)
+script = ExtResource("1_2f0qp")
+pipe_scene = ExtResource("2_28se8")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(432, 463)
+texture = ExtResource("3_ven5y")
+offset = Vector2(432, 384)
+
+[node name="falcon" parent="." instance=ExtResource("4_chbq0")]
+
+[node name="ground" parent="." instance=ExtResource("5_etrba")]
+z_index = 1
+position = Vector2(1053, 752)
+
+[node name="pipetimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="hit" from="ground" to="." method="_on_ground_hit"]
+[connection signal="timeout" from="pipetimer" to="." method="_on_pipetimer_timeout"]

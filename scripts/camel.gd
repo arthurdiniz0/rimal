@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var riderposition: Marker2D = $riderposition
 @onready var area_2d: Area2D = $Area2D
 
-const SPEED = 250.0
+const SPEED = 230.0
 const JUMP_VELOCITY = -300.0
 
 var inUse = false

@@ -1,31 +1,32 @@
-[gd_scene load_steps=17 format=3 uid="uid://bta3pqjc528hr"]
+[gd_scene load_steps=18 format=3 uid="uid://bta3pqjc528hr"]
 
-[ext_resource type="Texture2D" uid="uid://cqqx1m57iiihr" path="res://assets/sprites/falcon.png" id="1_6tj4e"]
+[ext_resource type="Script" path="res://scripts/falcon.gd" id="1_oshrj"]
+[ext_resource type="Texture2D" uid="uid://de6ohjpms3i1y" path="res://assets/sprites/level3_falcon.png" id="2_46fbk"]
 [ext_resource type="Texture2D" uid="uid://c7jyied3ac03h" path="res://assets/sprites/falcon_final.png" id="2_ygtw6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_imfps"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(512, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_js5ip"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cug6p"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(576, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8muy"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3264j"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(640, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_knl20"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ri4oo"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(704, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjn0v"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_54lxu"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(768, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vdrf"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yim4a"]
-atlas = ExtResource("1_6tj4e")
-region = Rect2(832, 21, 64, 21)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c70hi"]
+atlas = ExtResource("2_46fbk")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d1hbm"]
 atlas = ExtResource("2_ygtw6")
@@ -55,25 +56,25 @@ region = Rect2(320, 21, 64, 21)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_imfps")
+"texture": SubResource("AtlasTexture_js5ip")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cug6p")
+"texture": SubResource("AtlasTexture_j8muy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3264j")
+"texture": SubResource("AtlasTexture_knl20")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ri4oo")
+"texture": SubResource("AtlasTexture_jjn0v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_54lxu")
+"texture": SubResource("AtlasTexture_5vdrf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yim4a")
+"texture": SubResource("AtlasTexture_c70hi")
 }],
 "loop": true,
-"name": &"fly",
+"name": &"flying",
 "speed": 10.0
 }, {
 "frames": [{
@@ -100,16 +101,20 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pygog"]
-radius = 5.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wph41"]
+radius = 17.0
+height = 54.0
 
 [node name="falcon" type="CharacterBody2D"]
+scale = Vector2(1.43, 1.43)
+script = ExtResource("1_oshrj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.97, 2.97)
 sprite_frames = SubResource("SpriteFrames_fmk8x")
-animation = &"idle"
+animation = &"flying"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
-shape = SubResource("CircleShape2D_pygog")
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_wph41")

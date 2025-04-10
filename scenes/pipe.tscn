@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bel0k2geiysvd"]
+
+[ext_resource type="Script" path="res://scripts/pipe.gd" id="1_76sf4"]
+[ext_resource type="Texture2D" uid="uid://gwulvftfc8q7" path="res://assets/sprites/pipe.png" id="2_ttypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odhnf"]
+size = Vector2(75.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thmos"]
+size = Vector2(68.5, 527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dj0m"]
+size = Vector2(75, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a8hc"]
+size = Vector2(70, 525)
+
+[node name="pipe" type="Area2D"]
+position = Vector2(0, 310)
+script = ExtResource("1_76sf4")
+
+[node name="lower" type="Sprite2D" parent="."]
+position = Vector2(0, -98)
+texture = ExtResource("2_ttypp")
+offset = Vector2(0, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 37)
+shape = SubResource("RectangleShape2D_odhnf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 316.5)
+shape = SubResource("RectangleShape2D_thmos")
+
+[node name="upper" type="Sprite2D" parent="."]
+position = Vector2(0, -217)
+texture = ExtResource("2_ttypp")
+offset = Vector2(0, -300)
+flip_v = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -257.5)
+shape = SubResource("RectangleShape2D_8dj0m")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(0, -538)
+shape = SubResource("RectangleShape2D_7a8hc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
