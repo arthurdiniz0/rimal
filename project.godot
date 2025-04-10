@@ -29,6 +29,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "checkpearl": "res://dialogues/checkpearl.dtl",
 "date": "res://dialogues/date.dtl",
+"need_camel": "res://dialogues/need_camel.dtl",
 "not_enough_pearls": "res://dialogues/not_enough_pearls.dtl"
 }
 layout/style_list=["res://assets/fonts/tolnotes.tres", "res://dialogues/VisualNovelTextbox/stylebasic.tres"]

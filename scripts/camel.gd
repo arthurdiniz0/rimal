@@ -60,6 +60,12 @@ func do_ride(rider):
 	area_2d.set_collision_mask_value(1, true)
 	area_2d.set_collision_mask_value(2, false)
 	
+	#disable collision of player, keep only the camel one
+	#this is to avoid conflict with the flag for nxt_lvl
+	#rider.set_collision_mask_value(1, true)
+	#rider.set_collision_mask_value(2, false)
+	#print("collision changed")
+	
 	# Turn position smoothing back on
 	await get_tree().create_timer(0.1).timeout
 	rider.get_node("Camera2D").position_smoothing_enabled = true

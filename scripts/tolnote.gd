@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var note_text: Label = $TolNotesPanel/NoteText
 @onready var player: CharacterBody2D = $"../Player"
+@onready var camel: CharacterBody2D = $"../camel"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +25,8 @@ func _process(delta: float) -> void: # Update text of the note
 		if get_tree().current_scene.scene_file_path != "res://scenes/lvlmenu.tscn": # If not in between lvls
 			if not player.is_physics_processing(): 
 				player.set_physics_process(true) # Unfreeze the player
+				if camel:
+					camel.set_physics_process(true) # Unfreeze the camel
 		if self.visible:
 			self.visible = false # Make the note invisible
 			Global.tolnote += 1

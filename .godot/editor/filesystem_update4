@@ -15,3 +15,14 @@ res://scenes/tolnote.tscn
 res://scenes/camel.tscn
 res://scenes/platform.tscn
 res://scenes/falcon.tscn
+res://scripts/camel.gd
+res://scripts/Global.gd
+res://scripts/scorpion.gd
+res://scripts/nxt_lvl.gd
+res://scripts/checkpointlvl2.gd
+res://dialogues/need_camel.dtl
+res://scripts/lvlmenu.gd
+res://scripts/tolnote.gd
+res://scripts/player.gd
+res://dialogues/date.dtl
+res://dialogues/checkpearl.dtl

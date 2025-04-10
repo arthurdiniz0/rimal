@@ -31,6 +31,10 @@ func _on_button_pressed() -> void: # Next level button
 	Global.lvl += 1 # Increasing global variable lvl
 	var nxt_lvl_path = "res://scenes/level" + str(Global.lvl) + ".tscn"
 	Global.tolnote = local_tolnote # retreive tolnote number
+	if Global.lvl == 2 and not Global.camel:
+		Dialogic.start("need_camel")
+		Global.lvl -= 1
+		return
 	get_tree().change_scene_to_file(nxt_lvl_path) # Change scene to next lvl
 	print(Global.lvl)
 	

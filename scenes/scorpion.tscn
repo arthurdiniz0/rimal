@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2w2i5h0lhc6l"]
+[gd_scene load_steps=11 format=3 uid="uid://d2w2i5h0lhc6l"]
 
 [ext_resource type="Script" path="res://scripts/scorpion.gd" id="1_fxbww"]
 [ext_resource type="PackedScene" uid="uid://dtrbka1ef726o" path="res://scenes/killzone.tscn" id="2_aiwyj"]
@@ -34,9 +34,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4xjq"]
-size = Vector2(10, 14)
+size = Vector2(21, 10)
 
-[node name="Scorpion" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j853i"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3fxt"]
+size = Vector2(20, 7)
+
+[node name="Scorpion" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_fxbww")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -50,13 +57,31 @@ frame_progress = 0.895103
 [node name="Killzone" parent="." instance=ExtResource("2_aiwyj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, -7)
+position = Vector2(1.5, -5)
 shape = SubResource("RectangleShape2D_u4xjq")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
-target_position = Vector2(9, 0)
+target_position = Vector2(13, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
-target_position = Vector2(-9, 0)
+target_position = Vector2(-11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -10)
+shape = SubResource("CircleShape2D_j853i")
+
+[node name="GroundDetector" type="Area2D" parent="."]
+position = Vector2(-2.38418e-07, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector"]
+position = Vector2(23, 2)
+shape = SubResource("RectangleShape2D_f3fxt")
+
+[node name="ColorRect" type="ColorRect" parent="GroundDetector"]
+visible = false
+offset_left = 13.0
+offset_top = -2.0
+offset_right = 33.0
+offset_bottom = 5.0

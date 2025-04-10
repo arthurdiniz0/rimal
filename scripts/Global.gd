@@ -1,10 +1,10 @@
 extends Node
 
-var score = 0
-var firstDate = true
-var tolnote = 1
+var score = 0 # 0
+var firstDate = true # true
+var tolnote = 1 # 1
 
-var camel = false
-var falcon = false
+var camel = false # false
+var falcon = false # false
 
-var lvl = 1
+var lvl = 1 # 1

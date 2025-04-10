@@ -30,8 +30,10 @@ func _ready():
 			print("freecamel")
 			camel.process_mode = 4 # disable
 			camel.visible = false
+			return
 		else:
 			player.get_node("Camera2D").position_smoothing_enabled = false
+			return
 
 
 func add_point(): # This is called by date.gd when a date is collected
@@ -46,6 +48,8 @@ func add_point(): # This is called by date.gd when a date is collected
 func tolerance_note(): # This is called by pearl.gd when a pearl is collected
 	tolnote.visible = true # Make tolerance note visible
 	player.set_physics_process(false) # Freeze player
+	if camel:
+		camel.set_physics_process(false) # Freeze camel
 	# The rest of the process (close the note) will happen at tolnote.gd 
 	
 
