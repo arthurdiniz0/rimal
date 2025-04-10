@@ -126,7 +126,7 @@ z_index = 3
 sprite_frames = SubResource("SpriteFrames_xutwa")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.617429
+frame_progress = 0.522928
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 3)
