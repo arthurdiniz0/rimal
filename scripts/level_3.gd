@@ -13,7 +13,7 @@ var screen_size : Vector2i
 var ground_height : int
 var pipes : Array
 const PIPE_DELAY : int = 35
-const PIPE_RANGE : int = 200
+const PIPE_RANGE : int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -79,7 +79,7 @@ func _on_pipetimer_timeout() -> void:
 func generate_pipes():
 	var pipe = pipe_scene.instantiate()
 	pipe.position.x = screen_size.x + PIPE_DELAY
-	pipe.position.y = (screen_size.y - ground_height) / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
+	pipe.position.y = screen_size.y / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
 	pipe.hit.connect(falcon_hit)
 	add_child(pipe)
 	pipes.append(pipe)

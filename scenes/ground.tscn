@@ -7,14 +7,17 @@
 size = Vector2(3451, 166)
 
 [node name="ground" type="Area2D"]
+position = Vector2(0, 675)
+scale = Vector2(1, 0.5)
 script = ExtResource("1_8pkvr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 1)
 texture = ExtResource("2_s6bwf")
+offset = Vector2(864, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 2)
+position = Vector2(1722, 2)
 shape = SubResource("RectangleShape2D_o7umm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
