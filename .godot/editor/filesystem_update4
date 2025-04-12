@@ -6,6 +6,7 @@ res://assets/ui_n_backgrounds/gui.tres
 res://scenes/date.tscn
 res://scenes/pearl.tscn
 res://scenes/player.tscn
+res://scenes/lvlmenu.tscn
 res://scenes/nxt_lvl.tscn
 res://scenes/level2.tscn
 res://scenes/scorpion.tscn
@@ -17,15 +18,5 @@ res://scenes/falcon.tscn
 res://scenes/level3.tscn
 res://scenes/ground.tscn
 res://scenes/pipe.tscn
-res://scenes/date3.tscn
-res://scenes/lvlmenu.tscn
-res://dialogues/date.dtl
-res://scripts/level_3.gd
-res://scripts/lvlmenu.gd
-res://scripts/falcon.gd
-res://scenes/winscreen.tscn
-res://scripts/winscreen.gd
-res://scripts/Global.gd
-res://scripts/tolnote.gd
-res://dialogues/need_falcon.dtl
-res://scenes/pause_menu.tscn
+res://scenes/cutscene.tscn
+res://scripts/cutscene.gd
