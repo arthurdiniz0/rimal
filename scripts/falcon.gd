@@ -32,7 +32,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.stop()
 		move_and_collide(velocity * delta)
 	else:
-		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("idle")
 		
 func flap():
 	velocity.y = FLAP_SPEED

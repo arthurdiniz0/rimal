@@ -190,7 +190,7 @@ theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = -2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("7_fs8es")
-text = "x / 6 Collected"
+text = "x / 5 Collected"
 
 [node name="Pearl1" type="Button" parent="TolNotesPanel"]
 layout_mode = 0
@@ -227,9 +227,9 @@ expand_icon = true
 
 [node name="Pearl4" type="Button" parent="TolNotesPanel"]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 101.0
 offset_top = 150.0
-offset_right = 114.0
+offset_right = 154.0
 offset_bottom = 204.0
 disabled = true
 icon = ExtResource("8_y3drq")
@@ -238,20 +238,9 @@ expand_icon = true
 
 [node name="Pearl5" type="Button" parent="TolNotesPanel"]
 layout_mode = 0
-offset_left = 141.0
+offset_left = 181.0
 offset_top = 150.0
-offset_right = 194.0
-offset_bottom = 204.0
-disabled = true
-icon = ExtResource("8_y3drq")
-icon_alignment = 1
-expand_icon = true
-
-[node name="Pearl6" type="Button" parent="TolNotesPanel"]
-layout_mode = 0
-offset_left = 221.0
-offset_top = 150.0
-offset_right = 274.0
+offset_right = 234.0
 offset_bottom = 204.0
 disabled = true
 icon = ExtResource("8_y3drq")
@@ -346,10 +335,10 @@ stretch_mode = 1
 visible = false
 
 [connection signal="pressed" from="UpgradesPanel/Camel" to="." method="_on_camel_pressed"]
+[connection signal="pressed" from="UpgradesPanel/Falcon" to="." method="_on_falcon_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl1" to="." method="_on_pearl_1_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl2" to="." method="_on_pearl_2_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl3" to="." method="_on_pearl_3_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl4" to="." method="_on_pearl_4_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl5" to="." method="_on_pearl_5_pressed"]
-[connection signal="pressed" from="TolNotesPanel/Pearl6" to="." method="_on_pearl_6_pressed"]
 [connection signal="pressed" from="NextLevel" to="." method="_on_button_pressed"]

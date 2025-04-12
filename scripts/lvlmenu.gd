@@ -9,6 +9,7 @@ extends Control
 @onready var camel: Button = $UpgradesPanel/Camel
 @onready var tol_notes_panel: Panel = $TolNotesPanel
 @onready var tolnote: CanvasLayer = $Tolnote
+@onready var falcon: Button = $UpgradesPanel/Falcon
 
 var local_tolnote = Global.tolnote # Store tolnote number
 
@@ -16,7 +17,9 @@ var local_tolnote = Global.tolnote # Store tolnote number
 func _ready() -> void:
 	# Update the number of level and tolnotes collected in the GUI. 
 	congrats.text = "Congratulations!\nLevel " + str(Global.lvl) + " Completed."
-	tol_notes_panel.get_node("TolNotes").get_node("TolNotesNum").text = str(Global.tolnote - 1) + " / 6 Collected."
+	if Global.lvl == 3: 
+		congrats.text = "Congratulations!\nGame Completed!"
+	tol_notes_panel.get_node("TolNotes").get_node("TolNotesNum").text = str(Global.tolnote - 1) + " / 5 Collected."
 	
 	for i in range(1, Global.tolnote): # Enable buttons only of tolnotes already collected
 		tol_notes_panel.get_node("Pearl" + str(i)).disabled = false
@@ -25,6 +28,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Updating score has to be real time, in case the user buys an upgrade
 	score_ui.text = str(Global.score)
+	
+	if Global.camel:
+		for children in camel.get_children(): # Disable button
+			children.visible = false
+		camel.disabled = true 
+	
+	if Global.falcon:
+		for children in falcon.get_children(): # Disable button
+			children.visible = false
+		falcon.disabled = true 
 
 
 func _on_button_pressed() -> void: # Next level button
@@ -33,6 +46,10 @@ func _on_button_pressed() -> void: # Next level button
 	Global.tolnote = local_tolnote # retreive tolnote number
 	if Global.lvl == 2 and not Global.camel:
 		Dialogic.start("need_camel")
+		Global.lvl -= 1
+		return
+	if Global.lvl == 3 and not Global.falcon:
+		Dialogic.start("need_falcon")
 		Global.lvl -= 1
 		return
 	get_tree().change_scene_to_file(nxt_lvl_path) # Change scene to next lvl
@@ -46,14 +63,11 @@ func _on_camel_pressed() -> void: # Buy camel
 	if Global.score >= 15: # If there is enough dates
 		Global.score -= 15
 		Global.camel = true
-		for children in camel.get_children(): # Disable button
-			children.visible = false
-		camel.disabled = true 
 	else: # If there isn't enough dates
 		print("Not enough dates")
 		
 		
-		
+
 		
 		
 # Below there is the logic to open the tolnotes in the panel
@@ -88,3 +102,11 @@ func _on_pearl_5_pressed() -> void:
 func _on_pearl_6_pressed() -> void:
 	Global.tolnote = 6
 	tolnote.visible = true
+
+
+func _on_falcon_pressed() -> void:
+	if Global.score >= 30: # If there is enough dates
+		Global.score -= 30
+		Global.falcon = true
+	else: # If there isn't enough dates
+		print("Not enough dates")

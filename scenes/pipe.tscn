@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bel0k2geiysvd"]
+[gd_scene load_steps=8 format=3 uid="uid://bel0k2geiysvd"]
 
 [ext_resource type="Script" path="res://scripts/pipe.gd" id="1_76sf4"]
 [ext_resource type="Texture2D" uid="uid://gwulvftfc8q7" path="res://assets/sprites/pipe.png" id="2_ttypp"]
+[ext_resource type="PackedScene" uid="uid://d3ppiwupta3p4" path="res://scenes/date3.tscn" id="3_1ny6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odhnf"]
 size = Vector2(75.5, 32)
@@ -45,5 +46,9 @@ shape = SubResource("RectangleShape2D_8dj0m")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(0, -538)
 shape = SubResource("RectangleShape2D_7a8hc")
+
+[node name="Date" parent="." instance=ExtResource("3_1ny6e")]
+position = Vector2(0, -115)
+scale = Vector2(5, 5)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

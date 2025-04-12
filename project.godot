@@ -30,6 +30,7 @@ directories/dtl_directory={
 "checkpearl": "res://dialogues/checkpearl.dtl",
 "date": "res://dialogues/date.dtl",
 "need_camel": "res://dialogues/need_camel.dtl",
+"need_falcon": "res://dialogues/need_falcon.dtl",
 "not_enough_pearls": "res://dialogues/not_enough_pearls.dtl"
 }
 layout/style_list=["res://assets/fonts/tolnotes.tres", "res://dialogues/VisualNovelTextbox/stylebasic.tres"]
@@ -63,6 +64,9 @@ animations/leave_default="Zoom Center Out"
 
 [display]
 
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 window/vsync/vsync_mode=0
 
 [editor_plugins]
@@ -101,3 +105,5 @@ dialogic_default_action={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

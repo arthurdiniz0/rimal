@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlef8wufc7s8j"]
+
+[ext_resource type="Script" path="res://scripts/winscreen.gd" id="1_44e1t"]
+[ext_resource type="Texture2D" uid="uid://c6raibby2sxui" path="res://assets/ui_n_backgrounds/GUI.png" id="3_jjq63"]
+[ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_w1quf"]
+[ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_q58ad"]
+[ext_resource type="PackedScene" uid="uid://dqnaqj8yb6hwd" path="res://scenes/player.tscn" id="9_bx22j"]
+[ext_resource type="Texture2D" uid="uid://bksqj8qruu3mg" path="res://assets/sprites/pearl_frozen.png" id="9_cppun"]
+[ext_resource type="Texture2D" uid="uid://d336ivumlkn81" path="res://assets/ui_n_backgrounds/desert.jpeg" id="10_bq6pb"]
+[ext_resource type="PackedScene" uid="uid://b74yheh4wfo0t" path="res://scenes/camel.tscn" id="10_f7e5l"]
+[ext_resource type="PackedScene" uid="uid://dsyen3g0p575s" path="res://scenes/tolnote.tscn" id="11_vbn6s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epl2p"]
+texture = ExtResource("3_jjq63")
+region_rect = Rect2(49, 97, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm0kd"]
+texture = ExtResource("3_jjq63")
+region_rect = Rect2(145, 81, 46, 14)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44e1t")
+
+[node name="TolNotesPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -744.0
+offset_top = -84.0
+offset_right = -418.0
+offset_bottom = 172.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_epl2p")
+
+[node name="TolNotes" type="Panel" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -83.0
+offset_right = 309.0
+offset_bottom = -27.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gm0kd")
+
+[node name="Label" type="Label" parent="TolNotesPanel/TolNotes"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 15.0
+offset_right = 265.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("4_w1quf")
+text = "Notes of Tolerance"
+
+[node name="TolNotesNum" type="Label" parent="TolNotesPanel/TolNotes"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 113.0
+offset_right = 259.0
+offset_bottom = 136.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("8_q58ad")
+text = "x / 5 Collected"
+
+[node name="Pearl1" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 78.0
+offset_right = 114.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("9_cppun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl2" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 78.0
+offset_right = 194.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("9_cppun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl3" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 78.0
+offset_right = 274.0
+offset_bottom = 132.0
+disabled = true
+icon = ExtResource("9_cppun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl4" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 150.0
+offset_right = 154.0
+offset_bottom = 204.0
+disabled = true
+icon = ExtResource("9_cppun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Pearl5" type="Button" parent="TolNotesPanel"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 150.0
+offset_right = 234.0
+offset_bottom = 204.0
+disabled = true
+icon = ExtResource("9_cppun")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Congrats" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -279.0
+offset_top = 61.0
+offset_right = 279.0
+offset_bottom = 116.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("4_w1quf")
+theme_override_font_sizes/font_size = 25
+text = "Congratulations
+You Won!"
+horizontal_alignment = 1
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="Background"]
+modulate = Color(1, 1, 1, 0.556863)
+offset_left = -36.0
+offset_top = -216.0
+offset_right = 2051.0
+offset_bottom = 1143.0
+texture = ExtResource("10_bq6pb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Tolnote" parent="." instance=ExtResource("11_vbn6s")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("9_bx22j")]
+visible = false
+position = Vector2(1112, 512)
+scale = Vector2(5, 5)
+motion_mode = 1
+
+[node name="camel" parent="." instance=ExtResource("10_f7e5l")]
+visible = false
+position = Vector2(160, 576)
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="TolNotesPanel/Pearl1" to="." method="_on_pearl_1_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl2" to="." method="_on_pearl_2_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl3" to="." method="_on_pearl_3_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl4" to="." method="_on_pearl_4_pressed"]
+[connection signal="pressed" from="TolNotesPanel/Pearl5" to="." method="_on_pearl_5_pressed"]

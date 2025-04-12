@@ -19,7 +19,10 @@ func _process(delta: float) -> void: # Update text of the note
 		note_text.text = "Tolerance Clubs in universities encourage youth to lead initiatives that promote coexistence."
 	elif Global.tolnote == 4:
 		note_text.text = "Sharing water or gahwa (Arabic coffee) with travelers is an age-old sign of generosity and good will in Emirati culture."
-	
+	elif Global.tolnote == 5:
+		note_text.text = "“Without tolerance, no rapport can be maintained between friends or brothers. Tolerance is a virtue.”
+
+- Shaikh Zayed Bin Sultan Al Nahyan"
 	# "Closing" tolerance note: make it invisible when pressing key
 	if Input.is_action_just_pressed("dialogic_default_action"):
 		if get_tree().current_scene.scene_file_path != "res://scenes/lvlmenu.tscn": # If not in between lvls
