@@ -9,18 +9,18 @@ extends Node
 var game_running : bool
 var game_over : bool
 var scroll
-const SCROLL_SPEED : float = 4 # 4
-var screen_size : Vector2i
+const SCROLL_SPEED : float = 350 # 4
+#var screen_size : Vector2i
 var ground_height : int
 var pipes : Array
 const PIPE_DELAY : int = 100 # 100
-const PIPE_RANGE : int = 180 # 200
+const PIPE_RANGE : int = 150 # 200
 
 var initial_score = Global.score 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.tolnote = 6
-	screen_size = get_window().size
+	#screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	new_game()
 	
@@ -54,12 +54,12 @@ func start_game():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if game_running:
-		scroll += SCROLL_SPEED
-		if scroll >= screen_size.x:
+		scroll += SCROLL_SPEED * delta
+		if scroll >= 1152:
 			scroll = 0
 		ground.position.x = -scroll
 		for pipe in pipes:
-			pipe.position.x -= SCROLL_SPEED
+			pipe.position.x -= SCROLL_SPEED * delta
 		
 	scoreui.text = str(Global.score) # Update score in the GUI
 	if Global.score == 30: # Win condition
@@ -91,7 +91,7 @@ func _on_pipetimer_timeout() -> void:
 	
 func generate_pipes():
 	var pipe = pipe_scene.instantiate()
-	pipe.position.x = screen_size.x + PIPE_DELAY
+	pipe.position.x = 1152 + PIPE_DELAY
 	pipe.position.y = 648 / 2 + randi_range(-PIPE_RANGE, PIPE_RANGE)
 	pipe.hit.connect(falcon_hit)
 	

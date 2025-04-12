@@ -64,9 +64,7 @@ animations/leave_default="Zoom Center Out"
 
 [display]
 
-window/size/resizable=false
-window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

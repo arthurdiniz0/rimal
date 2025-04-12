@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlef8wufc7s8j"]
+[gd_scene load_steps=16 format=3 uid="uid://dlef8wufc7s8j"]
 
 [ext_resource type="Script" path="res://scripts/winscreen.gd" id="1_44e1t"]
+[ext_resource type="Theme" uid="uid://dqmu52ht0y2m8" path="res://assets/ui_n_backgrounds/gui.tres" id="2_7u315"]
 [ext_resource type="Texture2D" uid="uid://c6raibby2sxui" path="res://assets/ui_n_backgrounds/GUI.png" id="3_jjq63"]
 [ext_resource type="FontFile" uid="uid://dbjl1e6kdxpl6" path="res://assets/fonts/PixelOperator8.ttf" id="4_w1quf"]
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_q58ad"]
@@ -17,6 +18,42 @@ region_rect = Rect2(49, 97, 30, 30)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm0kd"]
 texture = ExtResource("3_jjq63")
 region_rect = Rect2(145, 81, 46, 14)
+
+[sub_resource type="Animation" id="Animation_awqar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ipq1x"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36yby"]
+_data = {
+"RESET": SubResource("Animation_awqar"),
+"fade_out": SubResource("Animation_ipq1x")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -79,6 +116,7 @@ offset_left = 61.0
 offset_top = 78.0
 offset_right = 114.0
 offset_bottom = 132.0
+focus_mode = 0
 disabled = true
 icon = ExtResource("9_cppun")
 icon_alignment = 1
@@ -90,6 +128,7 @@ offset_left = 141.0
 offset_top = 78.0
 offset_right = 194.0
 offset_bottom = 132.0
+focus_mode = 0
 disabled = true
 icon = ExtResource("9_cppun")
 icon_alignment = 1
@@ -101,6 +140,7 @@ offset_left = 221.0
 offset_top = 78.0
 offset_right = 274.0
 offset_bottom = 132.0
+focus_mode = 0
 disabled = true
 icon = ExtResource("9_cppun")
 icon_alignment = 1
@@ -112,6 +152,7 @@ offset_left = 101.0
 offset_top = 150.0
 offset_right = 154.0
 offset_bottom = 204.0
+focus_mode = 0
 disabled = true
 icon = ExtResource("9_cppun")
 icon_alignment = 1
@@ -123,6 +164,7 @@ offset_left = 181.0
 offset_top = 150.0
 offset_right = 234.0
 offset_bottom = 204.0
+focus_mode = 0
 disabled = true
 icon = ExtResource("9_cppun")
 icon_alignment = 1
@@ -152,7 +194,7 @@ horizontal_alignment = 1
 layer = -1
 
 [node name="Background" type="TextureRect" parent="Background"]
-modulate = Color(1, 1, 1, 0.556863)
+modulate = Color(1, 1, 1, 0.364706)
 offset_left = -36.0
 offset_top = -216.0
 offset_right = 2051.0
@@ -175,8 +217,44 @@ visible = false
 position = Vector2(160, 576)
 scale = Vector2(5, 5)
 
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -96.0
+offset_right = 111.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+theme = ExtResource("2_7u315")
+text = "Main Menu"
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_36yby")
+}
+
 [connection signal="pressed" from="TolNotesPanel/Pearl1" to="." method="_on_pearl_1_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl2" to="." method="_on_pearl_2_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl3" to="." method="_on_pearl_3_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl4" to="." method="_on_pearl_4_pressed"]
 [connection signal="pressed" from="TolNotesPanel/Pearl5" to="." method="_on_pearl_5_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

@@ -8,6 +8,8 @@ extends Control
 @onready var score_ui: Label = $Score/ScoreUI
 @onready var tol_notes_panel: Panel = $TolNotesPanel
 @onready var tolnote: CanvasLayer = $Tolnote
+@onready var main_menu: Button = $MainMenu
+@onready var animation_player: AnimationPlayer = $TransitionLayer/AnimationPlayer
 
 var local_tolnote = Global.tolnote # Store tolnote number
 
@@ -53,17 +55,28 @@ func _on_pearl_4_pressed() -> void:
 
 func _on_pearl_5_pressed() -> void:
 	Global.tolnote = 5
-	tolnote.visible = true
+	if not tolnote.visible:
+		tolnote.visible = true
 
 
 func _on_pearl_6_pressed() -> void:
 	Global.tolnote = 6
-	tolnote.visible = true
+	if not tolnote.visible:
+		tolnote.visible = true
 
 
-func _on_falcon_pressed() -> void:
-	if Global.score >= 30: # If there is enough dates
-		Global.score -= 30
-		Global.falcon = true
-	else: # If there isn't enough dates
-		print("Not enough dates")
+		
+
+
+
+func _on_main_menu_pressed() -> void:
+	Global.camel = false
+	Global.falcon = false
+	Global.firstDate = true
+	Global.lvl = 1
+	Global.score = 0
+	Global.tolnote = 1
+	
+	animation_player.play("fade_out")
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

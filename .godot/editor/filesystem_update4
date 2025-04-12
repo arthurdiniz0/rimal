@@ -28,3 +28,4 @@ res://scripts/winscreen.gd
 res://scripts/Global.gd
 res://scripts/tolnote.gd
 res://dialogues/need_falcon.dtl
+res://scenes/pause_menu.tscn
