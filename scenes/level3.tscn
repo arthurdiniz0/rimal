@@ -69,6 +69,7 @@ offset = Vector2(432, 384)
 
 [node name="Player" parent="." instance=ExtResource("4_chbq0")]
 position = Vector2(425, -7)
+scale = Vector2(1.25, 1.25)
 collision_layer = 1
 
 [node name="ground" parent="." instance=ExtResource("5_etrba")]
@@ -132,15 +133,18 @@ visible = false
 position = Vector2(-623, -315)
 
 [node name="Label" type="Label" parent="."]
+z_index = 4
 offset_left = 41.0
-offset_top = 19.0
-offset_right = 409.0
-offset_bottom = 73.0
+offset_top = -26.0
+offset_right = 427.0
+offset_bottom = 66.0
 size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("9_r2g6v")
-text = "Use the Space Bar to fly
+text = "Level 3
+
+Use the Space Bar to fly
 
 Objective: Collect 25 dates"
 

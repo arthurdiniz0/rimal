@@ -27,7 +27,7 @@ shadow_size = 1
 shadow_offset = Vector2(-2.7, 3.06)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5noj"]
-size = Vector2(11.722, 9.02196)
+size = Vector2(8.27793, 24.4882)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nvbn"]
 size = Vector2(6.55592, 24.4996)
@@ -371,13 +371,12 @@ offset_left = 714.0
 offset_top = 17.0
 offset_right = 926.0
 offset_bottom = 52.0
-scale = Vector2(0.77006, 0.77049)
+scale = Vector2(0.608203, 0.77049)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 1
 theme_override_fonts/font = ExtResource("2_t36hd")
 theme_override_font_sizes/font_size = 8
-text = "Use platforms
-to go up and down"
+text = "Wait for the platform"
 
 [node name="Label6" type="Label" parent="GameManager/Texts"]
 offset_left = 382.0
@@ -439,7 +438,8 @@ collision_mask = 2
 script = ExtResource("5_s4hfy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/checkpearl"]
-position = Vector2(-1.55592, 0.644417)
+position = Vector2(-3.27795, 8.37753)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_y5noj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameManager/checkpearl"]

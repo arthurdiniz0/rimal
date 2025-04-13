@@ -15,6 +15,9 @@ var local_tolnote = Global.tolnote # Store tolnote number
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	Music.change_music(1)
+	Music.play_music()
 	# Update the number of level and tolnotes collected in the GUI. 
 	congrats.text = "Congratulations!\nYou Won!"
 	tol_notes_panel.get_node("TolNotes").get_node("TolNotesNum").text = str(Global.tolnote - 1) + " / 5 Collected."

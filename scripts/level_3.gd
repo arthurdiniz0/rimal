@@ -19,6 +19,8 @@ const PIPE_RANGE : int = 150 # 200
 var initial_score = Global.score 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Music.change_music(2)
+	Music.play_music()
 	Global.tolnote = 5
 	#screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()

@@ -274,8 +274,9 @@ sprite_frames = SubResource("SpriteFrames_vdfip")
 autoplay = "default"
 frame_progress = 0.103694
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pipes/animation_pearl"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="pipes/animation_pearl"]
 stream = ExtResource("5_ilsi7")
+volume_db = 10.024
 
 [node name="upper" type="Sprite2D" parent="pipes"]
 position = Vector2(0, -154)

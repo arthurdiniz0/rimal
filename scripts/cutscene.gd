@@ -1,7 +1,7 @@
 extends Node2D
 @onready var pipes: Area2D = $pipes
 @onready var animation_pearl: AnimatedSprite2D = $pipes/animation_pearl
-@onready var audio_stream: AudioStreamPlayer2D = $pipes/animation_pearl/AudioStreamPlayer2D
+@onready var audio_stream: AudioStreamPlayer = $pipes/animation_pearl/AudioStreamPlayer2D
 @onready var animation_player: AnimationPlayer = $TransitionLayer/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
