@@ -19,7 +19,7 @@ const PIPE_RANGE : int = 150 # 200
 var initial_score = Global.score 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.tolnote = 6
+	Global.tolnote = 5
 	#screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	new_game()
@@ -62,10 +62,10 @@ func _process(delta):
 			pipe.position.x -= SCROLL_SPEED * delta
 		
 	scoreui.text = str(Global.score) # Update score in the GUI
-	if Global.score == 30: # Win condition
+	if Global.score == 25: # Win condition
 		animation_player.play("fade_out")
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes/winscreen.tscn") # PUT HERE SCENE OF PEARL 5 BEING COLLECTED
+		get_tree().change_scene_to_file("res://scenes/cutscene.tscn") # send to cutscene
 
 func check_top():
 	if falcon.position.y < 0:

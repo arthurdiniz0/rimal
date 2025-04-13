@@ -20,3 +20,10 @@ res://scenes/ground.tscn
 res://scenes/pipe.tscn
 res://scenes/cutscene.tscn
 res://scripts/cutscene.gd
+res://scenes/winscreen.tscn
+res://scenes/lvl3end.tscn
+res://scripts/nxt_lvl.gd
+res://scripts/Global.gd
+res://scripts/tolnote.gd
+res://scripts/level_3.gd
+res://scripts/lvlmenu.gd

@@ -6,7 +6,10 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Global.lvl == 4:
+		await get_tree().create_timer(0.75).timeout
+		player.set_physics_process(false)
+		self.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +26,7 @@ func _process(delta: float) -> void: # Update text of the note
 		note_text.text = "“Without tolerance, no rapport can be maintained between friends or brothers. Tolerance is a virtue.”
 
 - Shaikh Zayed Bin Sultan Al Nahyan"
+	
 	# "Closing" tolerance note: make it invisible when pressing key
 	if Input.is_action_just_pressed("dialogic_default_action"):
 		if get_tree().current_scene.scene_file_path != "res://scenes/lvlmenu.tscn": # If not in between lvls

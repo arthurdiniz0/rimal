@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://bbhb4c0isdk3b"]
+[gd_scene load_steps=33 format=3 uid="uid://bbhb4c0isdk3b"]
 
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_en28d"]
 [ext_resource type="Texture2D" uid="uid://drhdynn1g4yab" path="res://assets/ui_n_backgrounds/dubaiskyline.png" id="1_wi448"]
 [ext_resource type="Texture2D" uid="uid://de6ohjpms3i1y" path="res://assets/sprites/level3_falcon.png" id="2_61msd"]
 [ext_resource type="Texture2D" uid="uid://gwulvftfc8q7" path="res://assets/sprites/pipe.png" id="3_kgchs"]
 [ext_resource type="Texture2D" uid="uid://bsf2h35aribof" path="res://assets/sprites/pearl.png" id="4_d2tax"]
+[ext_resource type="AudioStream" uid="uid://doehlmajpp6jn" path="res://assets/sounds/date.wav" id="5_ilsi7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkub6"]
 atlas = ExtResource("2_61msd")
@@ -140,6 +141,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b43kk"]
 size = Vector2(56, 1412)
 
+[sub_resource type="Animation" id="Animation_m3qmk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_tw6ar"]
 resource_name = "aiaiuiui"
 length = 1.5
@@ -168,37 +196,46 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(-300, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_m3qmk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j47sg"]
+_data = {
+"RESET": SubResource("Animation_m3qmk"),
+"aiaiuiui": SubResource("Animation_tw6ar")
+}
+
+[sub_resource type="Animation" id="Animation_awqar"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:zoom")
+tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
+"values": [Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j47sg"]
+[sub_resource type="Animation" id="Animation_ipq1x"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36yby"]
 _data = {
-"RESET": SubResource("Animation_m3qmk"),
-"aiaiuiui": SubResource("Animation_tw6ar")
+"RESET": SubResource("Animation_awqar"),
+"fade_out": SubResource("Animation_ipq1x")
 }
 
 [node name="cutscene" type="Node2D"]
@@ -237,6 +274,9 @@ sprite_frames = SubResource("SpriteFrames_vdfip")
 autoplay = "default"
 frame_progress = 0.103694
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="pipes/animation_pearl"]
+stream = ExtResource("5_ilsi7")
+
 [node name="upper" type="Sprite2D" parent="pipes"]
 position = Vector2(0, -154)
 texture = ExtResource("3_kgchs")
@@ -258,5 +298,23 @@ libraries = {
 "": SubResource("AnimationLibrary_j47sg")
 }
 autoplay = "aiaiuiui"
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_36yby")
+}
 
 [connection signal="body_entered" from="pipes" to="." method="_on_pipes_body_entered"]

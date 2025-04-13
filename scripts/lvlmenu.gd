@@ -10,6 +10,7 @@ extends Control
 @onready var tol_notes_panel: Panel = $TolNotesPanel
 @onready var tolnote: CanvasLayer = $Tolnote
 @onready var falcon: Button = $UpgradesPanel/Falcon
+@onready var animation_player: AnimationPlayer = $TransitionLayer/AnimationPlayer
 
 var local_tolnote = Global.tolnote # Store tolnote number
 
@@ -52,8 +53,10 @@ func _on_button_pressed() -> void: # Next level button
 		Dialogic.start("need_falcon")
 		Global.lvl -= 1
 		return
+	animation_player.play("fade_out")
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file(nxt_lvl_path) # Change scene to next lvl
-	print(Global.lvl)
+	print("Level: ", Global.lvl)
 	
 	
 	

@@ -140,9 +140,9 @@ size_flags_horizontal = 4
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
 theme_override_fonts/font = ExtResource("9_r2g6v")
-text = "Use the Space Bar to Fly
+text = "Use the Space Bar to fly
 
-Objective: Collect 30 Dates"
+Objective: Collect 25 dates"
 
 [connection signal="hit" from="ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="pipetimer" to="." method="_on_pipetimer_timeout"]
