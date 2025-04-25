@@ -1,78 +1,52 @@
-<p align="center">
-  <img width="1280" alt="cover" src="https://user-images.githubusercontent.com/2206700/189457799-6327bab0-b085-4421-8640-6a18e395d17d.png">
-</p>
+# Rimal
 
-<h1 align="center">Dialogic 2</h1>
+A short narrative-driven 2D platformer where players explore themes of tolerance, coexistence, and cultural heritage in a setting inspired by the United Arab Emirates.
 
-<p align="center">
-  Create <b>Dialogs</b>, <b>Visual Novels</b>, <b>RPGs</b>, and <b>manage Characters</b> with Godot to create your Game!
-</p>
+## About the Game
 
-<p align="center">
-  <a href="https://discord.gg/DjcDgDaTMe" target="_blank" style="text-decoration:none"><img alt="Discord" src="https://img.shields.io/discord/628713677239091231?logo=discord&labelColor=CFC9C8&color=646FA9"></a>
-  <a href="https://godotengine.org/download/" target="_blank" style="text-decoration:none"><img alt="Godot v4.2+" src="https://img.shields.io/badge/Godot-v4.2+-%23478cbf?labelColor=CFC9C8&color=49A9B4" /></a>
-  <a href="https://docs.dialogic.pro/introduction.html" target="_blank" style="text-decoration:none"><img alt="Dialogic 2 Documentation" src="https://img.shields.io/badge/documention-online-green?labelColor=CFC9C8&color=6BCD69"></a>
-  <a href="https://github.com/dialogic-godot/dialogic/actions/workflows/unit_test.yml" target="_blank style="text-decoration:none"><img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/dialogic-godot/dialogic/unit_test.yml?labelColor=CFC9C8&color=DBDCB8"></a>
-  <a href="https://github.com/dialogic-godot/dialogic/releases"  target="_blank" style="text-decoration:none"><img alt="Latest Dialogic Release" src="https://img.shields.io/github/v/release/dialogic-godot/dialogic?include_prereleases&labelColor=CFC9C8&color=CBA18C"></a>
-</p>
+Rimal was developed by Arthur Diniz and Erica de Castro for the 2025 Madar Tolerance Game Jam, organized under the Tolerance Clubs Initiative in the UAE. As you travel through golden dunes and vibrant cities, you’ll collect glowing pearls that reveal messages rooted in the values of unity, respect, and hospitality.
 
-## Table of Contents
-- [Version](#version)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Testing](#testing)
-- [Credits](#credits)
-- [License](#license)
+Symbolic obstacles like Scorpions of Misunderstanding stand in your way, but with courage — and a helpful camel or falcon — you’ll overcome them.
 
-## Version
+## Features
 
-Dialogic 2 **requires at least Godot 4.2**.
+- Environments inspired by Emirati culture and landscape  
+- Unlockable upgrades like a camel and a falcon  
+- Collectible "Notes of Tolerance" that highlight peaceful coexistence  
+- Original soundtrack and handmade pixel art  
+- Built in Godot Engine using GDScript
 
-[If you are looking for the Godot 3.x version (Dialogic 1.x) you can find it here.](https://github.com/dialogic-godot/dialogic-1)
+## Controls
 
-## Installation
-Follow the installation instructions on our [Getting Started](https://docs.dialogic.pro/getting-started.html#1-installation--activation) documentation.
+Keyboard:
+- Arrow keys — Move  
+- Space bar — Jump / Fly  
+- Enter — Interact / Continue
 
-Dialogic comes with an auto-updater so you can install future versions right from within the plugin.
+## Play the Game
 
-## Documentation
-You can find the official documentation of Dialogic here: [Dialogic Documentation](https://docs.dialogic.pro/)
+Play it on Itch.io: [Coming Soon](https://your-game-link.itch.io/sands-of-harmony)
 
-There is a Class Reference as well: [Class Reference](https://docs.dialogic.pro/class_index.html)
+## Project Structure
 
+/assets → Sprites, backgrounds, UI elements
 
-## Connect with us!
-If you need help or want to share your Dialogic projects, take a look at the following options:
+/scripts → GDScript files
 
-- Ask questions, or report bugs on our [Discord](https://discord.gg/DjcDgDaTMe)
-- Report bugs and issues on the [GitHub Issues Page](https://github.com/dialogic-godot/dialogic/issues)
-- Ask questions on [GitHub Discussions](https://github.com/dialogic-godot/dialogic/discussions)
+/scenes → Level and UI scenes
 
-## Testing
-Dialogic uses [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing) to ensure specific parts function as expected. These tests run on every git push and pull request. The framework to do these tests is called [gdUnit4](https://github.com/MikeSchulze/gdUnit4) and our tests reside in the [/Tests/Unit](https://github.com/dialogic-godot/dialogic/tree/main/Tests/Unit) path. We recommend installing the `gdUnit4` add-on from the `AssetLib`, with this add-on, you can run tests locally.
-
-To get started, take a look at the existing files in the path and read the documentation to [create your first test](https://mikeschulze.github.io/gdUnit4/first_steps/firstTest/).
-
-## Interacting with the Source Code
-All methods and variables in the Dialogic 2 source **code prefixed with an underscore (`_`)** are considered *private*, for instance: `_remove_character()`.
-
-While you can use them, they may change in their behavior or change their signature, causing breakage in your code while moving between versions.
-Most private methods are used inside public ones; if you need help, check the documentation.
-
-**Public methods and variables can be found in our [Class Reference](https://docs.dialogic.pro/class_index.html).**
-
-During the Alpha and Beta version stages, code may change at any Dialogic Release to allow drafting a better design.
-Changelogs will accommodate for these changes and inform you on how to update your code.
-
-
-## Credits
-Made by [Jowan-Spooner](https://github.com/Jowan-Spooner) and [Emilio Coppola](https://github.com/coppolaemilio).
-
-Contributors: [CakeVR](https://github.com/CakeVR), [Exelia](https://github.com/exelia-antonov), [zaknafean](https://github.com/zaknafean), [and more!](https://github.com/dialogic-godot/dialogic/graphs/contributors).
-
-Special thanks: [Arnaud](https://github.com/arnaudvergnet), [AnidemDex](https://github.com/AnidemDex), [ellogwen](https://github.com/ellogwen), [Tim Krief](https://github.com/timkrief), [Toen](https://twitter.com/ToenAndreMC), Òscar, [Francisco Presencia](https://francisco.io/), [M7mdKady14](https://github.com/M7mdKady14).
-
-### Thank you to all my [Patreons](https://www.patreon.com/coppolaemilio) and Github sponsors for making this possible!
+/music → Original soundtrack
 
 ## License
-This project is licensed under the terms of the [MIT license](https://github.com/dialogic-godot/dialogic/blob/main/LICENSE).
+
+This project is open source under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)  
+![Screenshot 2](screenshots/screenshot2.png)  
+![Screenshot 3](screenshots/screenshot3.png)
+
+## Contributions
+
+Want to improve or expand the project? Open a pull request or issue — contributions are welcome.
