@@ -25,7 +25,7 @@ Keyboard:
 
 ## Play the Game
 
-Play it on Itch.io: [Coming Soon](https://your-game-link.itch.io/sands-of-harmony)
+Play it on Itch.io: [Rimal](https://arthurdiniz.itch.io/rimal)
 
 ## Project Structure
 
